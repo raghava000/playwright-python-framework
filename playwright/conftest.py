@@ -15,7 +15,7 @@ def user_credentials(request):
     return request.param
 
 
-@pytest.fixture
+@pytest.fixture(scope = "function")
 def browserInstance(playwright, request):
     browser_name = request.config.getoption("browser_name")
     url_name = request.config.getoption("url_name")
